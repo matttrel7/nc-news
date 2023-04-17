@@ -13,19 +13,67 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 1200px) {
+  .App-header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+  }
+
+  .article-card li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+
+  .article-card li h3 {
+    font-weight: bold;
+  }
+
+  .article-card li img {
+    width: 50%;
+    border: 3px solid black;
+    margin-bottom: 6px;
+  }
+
+  .article-card li p {
+    font-size: 1rem;
+    line-height: 1;
+    margin: 8px;
+  }
+
+  .article-card li p span {
+    font-weight: bold;
+    color: rgb(20, 49, 239);
+  }
+
+  .article-card li p:nth-of-type(1) {
+  }
+
+  .article-card li p:nth-of-type(2) {
+  }
+
+  .article-card li p:nth-of-type(3) {
+  }
 }
 
 @keyframes App-logo-spin {
