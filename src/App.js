@@ -24,7 +24,7 @@ function App() {
           path="/articles/:article_id"
           element={
             <>
-              <FullArticleCard article={articles} setArticles={setArticles} />
+              <FullArticleCard />
             </>
           }
         ></Route>

@@ -1,15 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticlesById } from "../Api";
 
-const FullArticleCard = ({ article, setArticles }) => {
+const FullArticleCard = () => {
   const { article_id } = useParams();
-  //   const article = articles.find((a) => a.id === article_id);
+  const [article, setArticle] = useState({});
+
   useEffect(() => {
     getArticlesById(article_id).then((data) => {
-      setArticles(data);
+      console.log(data);
+      setArticle(data);
     });
-  }, [article_id, setArticles]);
+  }, [article_id, setArticle]);
 
   return (
     <section className="article-card">
