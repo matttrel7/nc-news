@@ -15,19 +15,10 @@ function App() {
         <Route
           path="/"
           element={
-            <>
-              <ArticleList articles={articles} setArticles={setArticles} />
-            </>
+            <ArticleList articles={articles} setArticles={setArticles} />
           }
-        ></Route>
-        <Route
-          path="/articles/:article_id"
-          element={
-            <>
-              <FullArticleCard />
-            </>
-          }
-        ></Route>
+        />
+        <Route path="/articles/:article_id" element={<FullArticleCard />} />
       </Routes>
     </div>
   );
