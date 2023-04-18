@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import React, { useState } from "react";
 import FullArticleCard from "./components/FullArticleCard";
-import CommentList from "./components/CommentList";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -26,7 +25,6 @@ function App() {
           element={
             <>
               <FullArticleCard />
-              <CommentList />
             </>
           }
         ></Route>

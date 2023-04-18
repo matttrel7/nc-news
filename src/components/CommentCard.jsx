@@ -1,4 +1,5 @@
 const CommentCard = ({ comments }) => {
+  if (comments.length === 0) return <h3>No Comments</h3>;
   return (
     <ul className="comment-card">
       {comments.map((comment) => {
