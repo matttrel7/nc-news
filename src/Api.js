@@ -6,7 +6,12 @@ const newsAPI = axios.create({
 
 export const getArticles = () => {
   return newsAPI.get("/articles").then((response) => {
-    console.log(response.data.articles);
     return response.data.articles;
+  });
+};
+
+export const getArticlesById = (id) => {
+  return newsAPI.get(`/articles/${id}`).then((response) => {
+    return response.data.article;
   });
 };
