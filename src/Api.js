@@ -27,3 +27,12 @@ export const patchArticleVotes = (votes, id) => {
     return response.data.article;
   });
 };
+
+export const postComment = (article_id, comment) => {
+  console.log(comment, article_id);
+  return newsAPI
+    .post(`/articles/${article_id}/comments`, comment)
+    .then((response) => {
+      return response.data;
+    });
+};
