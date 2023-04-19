@@ -6,15 +6,21 @@ const CommentCard = ({ comments }) => {
         return (
           <li key={comment.comment_id}>
             <p>
-              <span className="comment-category-titles">Comment:</span>{" "}
+              <span key={comment.body} className="comment-category-titles">
+                Comment:
+              </span>{" "}
               {comment.body}
             </p>
             <p>
-              <span className="comment-category-titles">Author:</span>{" "}
+              <span key={comment.author} className="comment-category-titles">
+                Author:
+              </span>{" "}
               {comment.author}
             </p>
             <p>
-              <span className="comment-category-titles">Votes:</span>{" "}
+              <span key={comment.votes} className="comment-category-titles">
+                Votes:
+              </span>{" "}
               {comment.votes}
             </p>
           </li>

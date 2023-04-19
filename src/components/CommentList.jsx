@@ -20,7 +20,7 @@ const CommentList = () => {
 
   return (
     <>
-      <CreateComment onCommentSubmit={addComment} article_id={article_id} />
+      <CreateComment onCommentSubmit={addComment} comments={comments} />
       <CommentCard comments={comments} />
     </>
   );

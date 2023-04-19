@@ -2,23 +2,36 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { postComment } from "../Api";
 
-const CreateComment = ({ onCommentSubmit }) => {
+const CreateComment = ({ onCommentSubmit, comments }) => {
   const [comment, setComment] = useState({
     body: "",
     author: "",
   });
-
   const [isPosted, setIsPosted] = useState(false);
+  const [isDuplicate, setIsDuplicate] = useState(false);
+
   const { article_id } = useParams();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const existingComment = comments.find(
+      (c) => c.author === comment.author && c.body === comment.body
+    );
+
+    if (existingComment) {
+      setIsDuplicate(true);
+      return;
+    }
 
     const finalComment = { ...comment };
 
     postComment(article_id, finalComment)
       .then((data) => {
+        const newComment = { ...finalComment };
         setIsPosted(true);
-        onCommentSubmit(data);
+        onCommentSubmit(newComment);
+        setComment({ body: "", author: "" });
       })
       .catch((error) => {
         console.log(error);
@@ -50,8 +63,11 @@ const CreateComment = ({ onCommentSubmit }) => {
         onChange={handleChange}
         required
       />
-      <button type="submit">Post Comment</button>
+      <button type="submit" disabled={isPosted}>
+        {isPosted ? "Comment posted" : "Post Comment"}
+      </button>
       {isPosted && <p>Successfully added!</p>}
+      {isDuplicate && <p>This comment has already been posted.</p>}
     </form>
   );
 };
