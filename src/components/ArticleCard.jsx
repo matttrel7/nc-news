@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ArticleCard = ({ articles, setArticles }) => {
+const ArticleCard = ({ articles }) => {
   return (
     <ul className="article-card">
       {articles.map((article) => {
