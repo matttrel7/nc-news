@@ -14,7 +14,7 @@ const CreateComment = ({ onCommentSubmit, comments }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setIsPosted(true);
     const existingComment = comments.find(
       (c) => c.author === comment.author && c.body === comment.body
     );
@@ -25,11 +25,11 @@ const CreateComment = ({ onCommentSubmit, comments }) => {
     }
 
     const finalComment = { ...comment };
-
+    console.log(finalComment, "final comment");
     postComment(article_id, finalComment)
       .then((data) => {
+        console.log(data, "data from post");
         const newComment = { ...finalComment };
-        setIsPosted(true);
         onCommentSubmit(newComment);
         setComment({ body: "", author: "" });
       })

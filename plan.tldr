@@ -13468,12 +13468,12 @@
             "parentId": "71593eab-8b13-4231-1c2c-44a8b6ef1bd8",
             "childIndex": 95,
             "point": [
-              793.71,
-              193.81
+              982.64,
+              193.85
             ],
             "size": [
-              242.19,
-              25.05
+              98.88,
+              25.9
             ],
             "rotation": 0,
             "style": {
@@ -13483,7 +13483,7 @@
               "dash": "draw",
               "scale": 1
             },
-            "label": "Topics drop down box",
+            "label": " ",
             "labelPoint": [
               0.5,
               0.5
@@ -16271,7 +16271,7 @@
             "parentId": "71593eab-8b13-4231-1c2c-44a8b6ef1bd8",
             "childIndex": 260,
             "point": [
-              1029.99,
+              1081.52,
               43.04
             ],
             "rotation": 0,
@@ -16282,7 +16282,7 @@
                 "index": 0,
                 "point": [
                   0,
-                  150.77
+                  162.55
                 ],
                 "canBind": true,
                 "bindingId": "e4f74979-f6b8-4864-1e79-3657701278c8"
@@ -16291,7 +16291,7 @@
                 "id": "end",
                 "index": 1,
                 "point": [
-                  227.02,
+                  175.49,
                   0
                 ],
                 "canBind": true
@@ -16300,8 +16300,8 @@
                 "id": "bend",
                 "index": 2,
                 "point": [
-                  113.51,
-                  75.39
+                  87.75,
+                  81.28
                 ]
               }
             },
@@ -16328,11 +16328,11 @@
             "parentId": "71593eab-8b13-4231-1c2c-44a8b6ef1bd8",
             "childIndex": 261,
             "point": [
-              1261.31,
+              1099.81,
               7.13
             ],
             "rotation": 0,
-            "text": "Changing this also changes the URL \nto be the topic of choosing \ne.g. \"/articles/topic/:topic",
+            "text": "Each is a topic in this row. Clikcing these also changes the URL \nto be the topic of choosing \ne.g. \"/articles/topic/:topic",
             "style": {
               "color": "blue",
               "size": "small",
@@ -16342,6 +16342,62 @@
               "font": "script",
               "textAlign": "middle"
             }
+          },
+          "babf23cd-3db1-491b-283e-461a4e4dd9cb": {
+            "id": "babf23cd-3db1-491b-283e-461a4e4dd9cb",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "71593eab-8b13-4231-1c2c-44a8b6ef1bd8",
+            "childIndex": 262,
+            "point": [
+              763.7,
+              196.2
+            ],
+            "size": [
+              96.33,
+              22.57
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "blue",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": " ",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "0a761596-aa5f-4cad-253b-c11c6bed511c": {
+            "id": "0a761596-aa5f-4cad-253b-c11c6bed511c",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "71593eab-8b13-4231-1c2c-44a8b6ef1bd8",
+            "childIndex": 263,
+            "point": [
+              871.22,
+              194.58
+            ],
+            "size": [
+              104.45,
+              25.25
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "blue",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": " ",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
           }
         },
         "bindings": {
