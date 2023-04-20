@@ -1,22 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getArticles } from "../Api";
 import ArticleCard from "./ArticleCard";
 
-const ArticleList = ({ articles, setArticles, selectedTopic }) => {
-  useEffect(() => {
-    getArticles(selectedTopic).then((data) => {
-      const filteredArticles = data.filter(
-        (article) => article.topic === selectedTopic
-      );
-      if (filteredArticles.length === 0) {
-        setArticles(data);
-      } else {
-        setArticles(filteredArticles);
-      }
-    });
-  }, [selectedTopic]);
+const ArticleList = ({ articles, setArticles }) => {
+  const [isLoading, setIsLoading] = useState(true);
 
-  return <ArticleCard articles={articles} />;
+  const { topic } = useParams();
+  useEffect(() => {
+    setIsLoading(true);
+    getArticles(topic)
+      .then((data) => {
+        setArticles(data);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [topic]);
+
+  return (
+    <>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <ArticleCard articles={articles ? articles : []} />
+      )}
+    </>
+  );
 };
 
 export default ArticleList;
