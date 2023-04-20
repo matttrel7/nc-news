@@ -15,7 +15,7 @@ const CommentList = () => {
   }, [article_id]);
 
   const addComment = (newComment) => {
-    setComments([...comments, newComment]);
+    setComments([newComment, ...comments]);
   };
 
   return (
