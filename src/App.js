@@ -8,16 +8,33 @@ import QueryBar from "./components/QueryBar";
 
 function App() {
   const [articles, setArticles] = useState([]);
+  const [sortBy, setSortBy] = useState("");
+  const [order, setOrder] = useState("");
 
   return (
     <div className="App">
       <Header />
-      <QueryBar topics={["coding", "cooking", "football"]} />
+      <QueryBar
+        topics={["coding", "cooking", "football"]}
+        sort_by={["created_at", "comment_count", "votes"]}
+        articles={articles}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        order={order}
+        setOrder={setOrder}
+      />
       <Routes>
         <Route
           path="/"
           element={
-            <ArticleList articles={articles} setArticles={setArticles} />
+            <ArticleList
+              articles={articles}
+              setArticles={setArticles}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              order={order}
+              setOrder={setOrder}
+            />
           }
         />
         <Route path="/articles/:article_id" element={<FullArticleCard />} />

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Sort from "./Sort";
 
-const QueryBar = ({ topics }) => {
+const QueryBar = ({ topics, articles, sortBy, setSortBy, order, setOrder }) => {
   return (
     <div>
       {topics.map((topic) => {
@@ -13,6 +14,13 @@ const QueryBar = ({ topics }) => {
           </Link>
         );
       })}
+      <Sort
+        articles={articles}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        order={order}
+        setOrder={setOrder}
+      />
     </div>
   );
 };
