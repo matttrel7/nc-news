@@ -3,20 +3,20 @@ import { useParams } from "react-router-dom";
 import { getArticles } from "../Api";
 import ArticleCard from "./ArticleCard";
 
-const ArticleList = ({ articles, setArticles }) => {
+const ArticleList = ({ articles, setArticles, sortBy, order }) => {
   const [isLoading, setIsLoading] = useState(true);
-
   const { topic } = useParams();
+  console.log(topic, sortBy, order, "data");
   useEffect(() => {
     setIsLoading(true);
-    getArticles(topic)
+    getArticles(topic, sortBy, order)
       .then((data) => {
         setArticles(data);
       })
       .finally(() => {
         setIsLoading(false);
       });
-  }, [topic]);
+  }, [topic, sortBy, order]);
 
   return (
     <>
