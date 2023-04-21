@@ -6,7 +6,7 @@ import ArticleCard from "./ArticleCard";
 const ArticleList = ({ articles, setArticles, sortBy, order }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { topic } = useParams();
-  console.log(topic, sortBy, order);
+  console.log(topic, sortBy, order, "data");
   useEffect(() => {
     setIsLoading(true);
     getArticles(topic, sortBy, order)

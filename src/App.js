@@ -42,7 +42,14 @@ function App() {
         <Route
           path="/topic/:topic"
           element={
-            <ArticleList articles={articles} setArticles={setArticles} />
+            <ArticleList
+              articles={articles}
+              setArticles={setArticles}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              order={order}
+              setOrder={setOrder}
+            />
           }
         />
       </Routes>

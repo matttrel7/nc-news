@@ -8,24 +8,34 @@ const Order = ({ order, setOrder, setOrderQuery, orderQuery }) => {
 
   return (
     <section>
-      <button
-        onClick={() => {
-          setOrder("asc");
-          setOrderQuery("asc");
+      <label htmlFor="order">Sort Order:</label>
+      <select
+        id="order"
+        defaultValue={""}
+        onChange={(e) => {
+          setOrder(e.target.value);
+          setOrderQuery(e.target.value);
         }}
       >
-        Ascending
-      </button>
-      <button
-        onClick={() => {
-          setOrder("desc");
-          setOrderQuery("desc");
-        }}
-      >
-        Descending
-      </button>
+        <option value=""></option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
     </section>
   );
 };
 
 export default Order;
+
+{
+  /* <label htmlFor="order">Sort Order:</label>
+        <select
+          id="order"
+          defaultValue={""}
+          onChange={(e) => {setOrder(e.target.value); setOrderQuery(e.target.value)}}
+        >
+          <option value=""></option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>  */
+}

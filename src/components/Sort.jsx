@@ -42,7 +42,9 @@ const Sort = ({
   return (
     <div>
       <label htmlFor="sort_by">Sort by</label>
+
       <select id="sort_by" onChange={handleOptionChange} value={sortBy}>
+        <option value=""></option>
         <option key={articles.created_at} value="created_at">
           Default (date)
         </option>
