@@ -18,6 +18,7 @@ function App() {
         topics={["coding", "cooking", "football"]}
         sort_by={["created_at", "comment_count", "votes"]}
         articles={articles}
+        setArticles={setArticles}
         sortBy={sortBy}
         setSortBy={setSortBy}
         order={order}

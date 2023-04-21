@@ -1,21 +1,30 @@
-const Order = ({ setOrder }) => {
-  function handleOptionChange(e) {
-    e.preventDefault();
-    setOrder(e.target.value);
-  }
+const Order = ({ order, setOrder, setOrderQuery, orderQuery }) => {
+  //   function handleOptionChange(e) {
+  //     e.preventDefault();
+  //     const value = e.target.value;
+  //     setOrder(value);
+  //     setOrderQuery(value);
+  //   }
 
   return (
-    <div>
-      <label htmlFor="order">Order</label>
-      <select id="sort_by" onChange={handleOptionChange}>
-        <option key="desc" value="desc">
-          Latest (default)
-        </option>
-        <option key="asc" value="asc">
-          Oldest
-        </option>
-      </select>
-    </div>
+    <section>
+      <button
+        onClick={() => {
+          setOrder("asc");
+          setOrderQuery("asc");
+        }}
+      >
+        Ascending
+      </button>
+      <button
+        onClick={() => {
+          setOrder("desc");
+          setOrderQuery("desc");
+        }}
+      >
+        Descending
+      </button>
+    </section>
   );
 };
 

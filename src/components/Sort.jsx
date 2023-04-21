@@ -1,15 +1,48 @@
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { getArticles } from "../Api";
 import Order from "./Order";
 
-const Sort = ({ articles, sortBy, setSortBy, order, setOrder }) => {
+const Sort = ({
+  articles,
+  sortBy,
+  setSortBy,
+  order,
+  setOrder,
+  setArticles,
+}) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sortByQuery = searchParams.get("sort_by");
+  const orderQuery = searchParams.get("order");
+
+  const setSortByQuery = (sortByValue) => {
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("sort_by", sortByValue);
+    setSearchParams(newParams);
+  };
+
+  const setOrderQuery = (direction) => {
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("order", direction);
+    setSearchParams(newParams);
+  };
+
+  // useEffect(() => {
+  //   getArticles(sortByQuery, orderQuery).then((data) => {
+  //     setArticles(data);
+  //   });
+  // }, [sortByQuery, orderQuery]);
+
   function handleOptionChange(e) {
-    e.preventDefault();
-    setSortBy(e.target.value);
+    const value = e.target.value;
+    setSortBy(value);
+    setSortByQuery(value);
   }
 
   return (
     <div>
       <label htmlFor="sort_by">Sort by</label>
-      <select id="sort_by" onChange={handleOptionChange}>
+      <select id="sort_by" onChange={handleOptionChange} value={sortBy}>
         <option key={articles.created_at} value="created_at">
           Default (date)
         </option>
@@ -20,7 +53,12 @@ const Sort = ({ articles, sortBy, setSortBy, order, setOrder }) => {
           votes
         </option>
       </select>
-      <Order setOrder={setOrder} />
+      <Order
+        setOrder={setOrder}
+        order={order}
+        setOrderQuery={setOrderQuery}
+        orderQuery={orderQuery}
+      />
     </div>
   );
 };
