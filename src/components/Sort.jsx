@@ -1,18 +1,8 @@
-import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getArticles } from "../Api";
 import Order from "./Order";
 
-const Sort = ({
-  articles,
-  sortBy,
-  setSortBy,
-  order,
-  setOrder,
-  setArticles,
-}) => {
+const Sort = ({ articles, sortBy, setSortBy, order, setOrder }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const sortByQuery = searchParams.get("sort_by");
   const orderQuery = searchParams.get("order");
 
   const setSortByQuery = (sortByValue) => {

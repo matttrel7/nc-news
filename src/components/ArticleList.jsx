@@ -16,7 +16,7 @@ const ArticleList = ({ articles, setArticles, sortBy, order }) => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [topic, sortBy, order]);
+  }, [topic, sortBy, order, setArticles]);
 
   return (
     <>
