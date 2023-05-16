@@ -6,4 +6,4 @@ This is my front-end project for Northcoders News. It was built using React and 
 
 ## Usage
 
-The front-end project is currently hosted at [].
+The front-end project is currently hosted at [https://legendary-moxie-619862.netlify.app].
