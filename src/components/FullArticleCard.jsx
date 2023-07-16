@@ -34,7 +34,7 @@ const FullArticleCard = () => {
 
   return (
     <>
-      <section className="article-card">
+      <section className="full-article-card">
         <h3>{article.title}</h3>
         <img src={article.article_img_url} alt={article.title}></img>
         <p>

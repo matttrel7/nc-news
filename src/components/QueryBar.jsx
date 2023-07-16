@@ -12,7 +12,7 @@ const QueryBar = ({
   setOrder,
 }) => {
   return (
-    <div>
+    <div className="query-bar">
       {topics.map((topic) => {
         return (
           <Link to={`/topic/${topic}`} key={topic}>
